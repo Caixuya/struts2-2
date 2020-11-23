@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.ui.theme" value="simple"/>
+    <package name="default" namespace="/" extends="struts-default">
+		<!-- 用户登录 -->
+		<!-- 配置action，在action指定处理请求的类，类的哪个方法来处理请求 -->
+		<!-- action name="uri" class="类名" method="方法" -->
+		<!-- 上面这条语句中没写method的值的话，就默认调用类中的execute()方法-->
+		<!-- <result name="方法的返回值">要跳转的页面</result> -->
+		<action name="login" class="action.Login" method="login">
+			<result name="ok">userList.jsp</result>
+			<result name="error">login.jsp</result>
+		</action>
+    </package>
+</struts>
